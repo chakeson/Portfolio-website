@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --bg-color-one: #F2F2F2;
+    --bg-color-two: #1C1D25;
+  }
+  
