@@ -2,11 +2,156 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*
+html,body {
+    overflow: auto;
+}*/
 
 
 :root {
     --bg-color-one: #F2F2F2;
     --bg-color-two: #1C1D25;
-  }
+    --text-grey-52: #747474;
+}
   
+
+h3 {
+    color: var(--text-grey-52); 
+}
+
+
+.scroll-setter {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.scroll-setter section {
+    scroll-snap-align: start;
+}
+
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-center-x {
+    justify-content: center;
+}
+
+.flex-center-y {
+    align-items: center;
+}
+
+
+.title1{
+    font-size: 4.375rem;
+}
+
+.title2{
+    font-size: 2.2rem;
+}
+
+.language {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.scroll-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 5px;
+    transform: rotate(90deg);
+}
+
+.btn {
+    border: none;
+    background-color: var(--bg-color-one);
+    color: var(--text-grey-52);
+}
+
+.entry-screen {
+    position: relative;
+    background-color: var(--bg-color-one);
+}
+
+.content-screen {
+    background-color: var(--bg-color-two);
+}
+
+.art {
+    padding-top: 5vh;
+    padding-bottom: 3vh;
+    width: 30vw;
+}
+
+.fade-one {
+    animation: entryfade 1.5s;
+    -moz-animation: entryfade 1.5s;
+    -o-animation: entryfade 1.5s;
+    -webkit-animation: entryfade 1.5s;
+}
+
+@keyframes entryfade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@-moz-keyframes entryfade { /* Firefox */
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@-webkit-keyframes entryfade { /* Chrome safari  */
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@-o-keyframes entryfade { /* Opera */
+    from {pacity: 0;}
+    to {opacity: 1;}
+}
+
+.fade-two {
+    animation: entryfadedelay 1.5s;
+    -moz-animation: entryfadedelay 1.5s;
+    -o-animation: entryfadedelay 1.5s;
+    -webkit-animation: entryfadedelay 1.5s;
+}
+
+@keyframes entryfadedelay {
+    0% { opacity:0;}
+    66% { opacity:0;}
+    100% { opacity:1;}
+}
+@-moz-keyframes entryfadedelay { /* Firefox */
+    0% { opacity:0;}
+    66% { opacity:0;}
+    100% { opacity:1;}
+}
+@-webkit-keyframes entryfadedelay { /* Chrome safari  */
+    0% { opacity:0;}
+    66% { opacity:0;}
+    100% { opacity:1;}
+}
+@-o-keyframes entryfadedelay { /* Opera */
+    0% { opacity:0;}
+    66% { opacity:0;}
+    100% { opacity:1;}
+}
