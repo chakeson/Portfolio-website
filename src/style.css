@@ -19,6 +19,7 @@ html,body {
     --bg-color-one: #F2F2F2;
     --bg-color-two: #1C1D25;
     --text-grey-52: #747474;
+    --text-white: #ffffff;
 }
   
 
@@ -51,6 +52,10 @@ h3 {
 
 .flex-column {
     flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
 }
 
 .flex-center-x {
@@ -154,4 +159,29 @@ h3 {
     0% { opacity:0;}
     66% { opacity:0;}
     100% { opacity:1;}
+}
+
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 420px;
+    height: 300px;
+    /*background: #1C1D25;*/
+    border-radius: 35px;
+    box-shadow: -15px -15px 35px #2D2E3B, 15px 15px 35px #0B0C0F;
+}
+
+.project-card > img {
+    padding-top: 21px;
+    border-radius: 35px;
+    width: 376px;
+    height: 200px;
+}
+.project-card h3 {
+    color: var(--text-white);
+    font-size: 26px;
+    line-height: 34px;
+    padding-top: 32px;
 }
