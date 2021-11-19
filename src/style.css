@@ -19,7 +19,9 @@ html,body {
     --bg-color-one: #F2F2F2;
     --bg-color-two: #1C1D25;
     --text-grey-52: #747474;
+    --text-grey-70: #BABBBD;
     --text-white: #ffffff;
+    --text-black: #000000;
 }
   
 
@@ -75,6 +77,20 @@ h3 {
     font-size: 2.2rem;
 }
 
+.title3{
+    font-size: 5.3333rem;
+    color: var(--text-white);
+    padding-top: 5vh;
+}
+.title4{
+    font-size: 2rem;
+    color: var(--text-grey-70);
+}
+
+.title4 > h2{
+    padding: 1rem 2rem 0;
+}
+
 .language {
     position: absolute;
     top: 20px;
@@ -100,6 +116,9 @@ h3 {
 }
 
 .content-screen {
+    width: 100vw;
+    min-height: 100vh;
+    max-width: 100%;
     background-color: var(--bg-color-two);
 }
 
@@ -162,26 +181,87 @@ h3 {
 }
 
 
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 5rem;
+    justify-items: center;
+    margin: 4rem 5vw;
+    padding: 0 0 5rem 0;
+    list-style-type: none;
+}
+  
+
 .project-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 420px;
     height: 300px;
-    /*background: #1C1D25;*/
     border-radius: 35px;
     box-shadow: -15px -15px 35px #2D2E3B, 15px 15px 35px #0B0C0F;
 }
 
 .project-card > img {
-    padding-top: 21px;
+    margin-top: 21px;
     border-radius: 35px;
     width: 376px;
     height: 200px;
+    transition: height 0.1s cubic-bezier(0, 0.88, 0.45, 0.94),
+                opacity 0.1s cubic-bezier(0, 0.88, 0.45, 0.94);
 }
-.project-card h3 {
+.project-card > h3 {
     color: var(--text-white);
     font-size: 26px;
     line-height: 34px;
     padding-top: 32px;
+    transition: height 0.1s ease-in-out;
+}
+
+.project-card > div > h4 {
+    display: none;
+    opacity: 0;
+}
+.project-card > div > a {
+    display: none;
+    opacity: 0;
+}
+.project-card > div  {
+    display: none;
+    opacity: 0;
+}
+
+.project-card:hover > img {
+    width: 378px;
+    height: 270px;
+    opacity: 50%;
+}
+
+.project-card:hover > h3 {
+    display: none;
+}
+.project-card:hover  > div > a {
+    display: block;
+    opacity: 1;
+}
+
+.project-card:hover > div  {
+    display: block;
+    opacity: 1;
+}
+
+.project-card:hover > div > div {
+    display: block;
+    opacity: 1;
+    color: var(--text-black);
+    background: #F7F8FF;
+    width: 120px;
+    height: 40px;
+    border-radius: 35px;
+}
+.project-card:hover > h4 {
+    display: block;
+    opacity: 1;
+    color: var(--text-white);
 }
