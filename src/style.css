@@ -19,6 +19,7 @@ html,body {
     --bg-color-one: #F2F2F2;
     --bg-color-two: #1C1D25;
     --text-grey-52: #747474;
+    --text-grey-60: #A4A5A8;
     --text-grey-70: #BABBBD;
     --text-white: #ffffff;
     --text-black: #000000;
@@ -128,6 +129,26 @@ h3 {
     width: 30vw;
 }
 
+@media screen and (max-width: 1200px) {
+    .art {
+        padding-top: 10vh;
+        width: 50vw;
+    }
+    .title1{
+        font-size: 3rem;
+    }
+    
+    .title2{
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: 600px) {
+    .art {
+        padding-top: 10vh;
+        width: 70vw;
+    }
+}
+
 .fade-one {
     animation: entryfade 1.5s;
     -moz-animation: entryfade 1.5s;
@@ -194,6 +215,7 @@ h3 {
   
 
 .project-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -208,18 +230,18 @@ h3 {
     border-radius: 35px;
     width: 376px;
     height: 200px;
-    transition: height 0.1s cubic-bezier(0, 0.88, 0.45, 0.94),
+    transition: /*height 0.1s cubic-bezier(0, 0.88, 0.45, 0.94),*/
                 opacity 0.1s cubic-bezier(0, 0.88, 0.45, 0.94);
 }
 .project-card > h3 {
     color: var(--text-white);
     font-size: 26px;
     line-height: 34px;
-    padding-top: 32px;
+    padding-top: 20px;
     transition: height 0.1s ease-in-out;
 }
 
-.project-card > div > h4 {
+.project-card  > h4 {
     display: none;
     opacity: 0;
 }
@@ -233,8 +255,8 @@ h3 {
 }
 
 .project-card:hover > img {
-    width: 378px;
-    height: 270px;
+    width: 376px;
+    height: 200px;
     opacity: 50%;
 }
 
@@ -244,24 +266,137 @@ h3 {
 .project-card:hover  > div > a {
     display: block;
     opacity: 1;
+    padding: 15px 21px 0 21px;
 }
-
+.project-card:hover  > div > a > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    color: var(--text-black);
+    text-decoration: none;
+    background: #F7F8FF;
+    width: 120px;
+    height: 40px;
+    border-radius: 35px;
+}
 .project-card:hover > div  {
-    display: block;
+    display: flex;
+    flex-direction: row;
     opacity: 1;
 }
 
 .project-card:hover > div > div {
     display: block;
     opacity: 1;
-    color: var(--text-black);
-    background: #F7F8FF;
-    width: 120px;
-    height: 40px;
-    border-radius: 35px;
+
 }
 .project-card:hover > h4 {
+    position: absolute;
+    width: 151px;
+    height: 45px;
+    left: 135px;
+    top: 56px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 40px;
+
     display: block;
     opacity: 1;
     color: var(--text-white);
+}
+
+
+
+
+
+
+
+.competency {
+    display: flex;
+    flex-direction: row;
+    background: #1C1D25;
+    box-shadow: -15px -15px 35px #2D2E3B,
+                15px 15px 35px #0B0C0F;
+    border-radius: 35px;
+    margin: 5% 5% 0 5%;
+}
+
+.competency-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 33.3333%;
+}
+
+.competency-card > h2 {
+    margin: 32px auto 32px auto;
+    font-size: 2.6667rem;
+}
+.competency-card > ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 2rem 20%;   
+}
+
+.competency-card > ul > li {
+    color: var(--text-grey-60);
+    font-size: 1.5rem;
+    list-style-type: none;
+}
+
+.divider {
+    display: block;
+    width: 3px;
+    background-color: var(--text-grey-52);
+}
+
+@media screen and (max-width: 1500px) {
+    .competency-card > h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .competency-card > h2 {
+        font-size: 2rem;
+    }
+    .divider {
+        width: 2px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .competency {
+        flex-direction: column;
+        align-items: center;
+        font-size: 2rem;
+    }
+    .competency-card {
+        width: 80%;
+    }
+    .competency-card > h2 {
+        margin: 2rem auto 0 auto;
+    }
+    .competency-card > ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;  
+    }
+    .competency-card > ul >li {
+        padding: 1rem;
+    }
+
+}
+
+.contact-card {
+    background: #1C1D25;
+    width: 500px;
+    height: 20rem;
+    border-radius: 35px;
+    box-shadow: -15px -15px 35px #2D2E3B, 
+                15px 15px 35px #0B0C0F;
+    margin: 5rem auto 0 auto;
 }
