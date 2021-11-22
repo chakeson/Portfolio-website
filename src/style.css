@@ -142,11 +142,19 @@ h3 {
     .title2{
         font-size: 1.2rem;
     }
+    .title3{
+        font-size: 4rem;
+        padding-top: 4vh;
+    }
 }
 @media screen and (max-width: 600px) {
     .art {
         padding-top: 10vh;
         width: 70vw;
+    }
+    .title3{
+        font-size: 3rem;
+        padding-top: 4vh;
     }
 }
 
@@ -391,6 +399,12 @@ h3 {
     }
 
 }
+@media screen and (max-width: 600px) {
+    .competency-card > ul {
+        flex-direction: column;
+        flex-wrap: wrap;  
+    }
+}
 
 .contact-card {
     display: flex;
@@ -411,6 +425,15 @@ h3 {
 .contact-card > div > a {
     display: inline;
     margin: 20px 0px 20px 0px;
+    text-decoration: none;
+    text-decoration-color: var(--text-grey-70);
+    transition: 1s;
+}
+
+.contact-card > div > a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--text-grey-70);
+    text-decoration-thickness: 0.1rem;
 }
 
 .contact-btn {
@@ -516,3 +539,15 @@ footer {
     background-color: var(--bg-color-two);
 }
 
+@media screen and (max-width: 1200px) {
+    .contact-card {
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem auto 0 auto;
+    }
+    .divider-contact {
+        width: 486px;
+        height: 3px;
+
+    }
+}
