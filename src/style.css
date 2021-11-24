@@ -30,8 +30,17 @@ html,body {
 h3 {
     color: var(--text-grey-52); 
 }
-
-
+/*
+.reduced-motion {
+    display: none;
+}
+@media(prefers-reduced-motion) {
+    .reduced-motion {
+        display: inline;
+    }
+}
+*/
+/*
 .scroll-setter {
     width: 100vw;
     height: 100vh;
@@ -43,11 +52,13 @@ h3 {
 .scroll-setter section {
     scroll-snap-align: start;
 }
-
+*/
 .fullscreen {
     width: 100vw;
     height: 100vh;
     max-width: 100%;
+    min-height: 797px;
+    /*min-height: 1100px;*/
 }
 
 .flex {
@@ -93,6 +104,11 @@ h3 {
     padding: 1rem 2rem 0;
 }
 
+.title5{
+    font-size: 5.3333rem;
+    color: var(--text-white);
+}
+
 .language {
     position: absolute;
     top: 20px;
@@ -103,6 +119,7 @@ h3 {
     position: absolute;
     bottom: 20px;
     left: 5px;
+    text-decoration: none;
     transform: rotate(90deg);
 }
 
@@ -110,6 +127,9 @@ h3 {
     border: none;
     background-color: var(--bg-color-one);
     color: var(--text-grey-52);
+}
+.btn:hover {
+    color: var(--text-grey-20);
 }
 
 .entry-screen {
@@ -146,6 +166,9 @@ h3 {
         font-size: 4rem;
         padding-top: 4vh;
     }
+    .title5{
+        font-size: 4rem;
+    }
 }
 @media screen and (max-width: 600px) {
     .art {
@@ -155,6 +178,9 @@ h3 {
     .title3{
         font-size: 3rem;
         padding-top: 4vh;
+    }
+    .title5{
+        font-size: 3rem;
     }
 }
 
@@ -217,8 +243,9 @@ h3 {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 5rem;
     justify-items: center;
-    margin: 4rem 5vw;
-    padding: 0 0 5rem 0;
+    /*margin: 4rem 5vw;*/
+    margin: 4rem 5vw 0 4rem;
+    /*padding: 0 0 5rem 0;*/
     list-style-type: none;
 }
   
@@ -465,7 +492,7 @@ h3 {
     width: 3px;
     height: 486px;
     background-color: var(--text-grey-52);
-    margin: 20px;
+    margin: 20px 10vh;
 }
 
 
@@ -535,7 +562,7 @@ h3 {
 }
 
 footer {
-    height: 15vh;
+    height: 10vh;
     background-color: var(--bg-color-two);
 }
 
@@ -551,3 +578,23 @@ footer {
 
     }
 }
+
+
+.link-menu {
+    position: sticky;
+    position: -webkit-sticky;
+    top:0px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.link-menu > a {
+    padding: 1rem 1rem 0px 1rem;
+}
+.link-menu > a > img {
+    width: 2rem;
+}
+
