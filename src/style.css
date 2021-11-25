@@ -611,7 +611,7 @@ footer {
     width: 80px;
     height: 80px;
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
+    /*transition: all 0.5s ease-in-out;*/
     background-color: transparent;
 }
 
@@ -652,6 +652,60 @@ footer {
 }
 
 /*Pop out aniamtion*/
-.menu > span > a {
 
+.menu > span {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 3rem;
+    right: -2rem;
+    transition: all 3s ease-in-out;
+}
+
+.menu.active >span {
+    display: block;
+    opacity: 1;
+}
+
+
+.menu.active >span a {
+    top: 0rem;
+    right: 0rem;
+}
+
+.menu.active > span a:nth-child(1) {
+    position: absolute;
+    /*transform: translate(1rem,1rem);*/
+    top: 1rem;
+    right: -5rem;
+    transform: translate(-1rem, 5rem);
+}
+
+.menu.active > span a:nth-child(2) {
+    /*position: absolute;*/
+    top: 3rem;
+    right: -5rem;
+}
+
+.menu.active > span a:nth-child(3) {
+    /*position: absolute;*/
+    top: 5rem;
+    right: -7rem;
+}
+
+.menu.active > span a:nth-child(4) {
+    /*position: absolute;*/
+    top: 7rem;
+    right: -2rem;
+}
+
+
+.menu.active > span > a {
+    text-decoration: none;
+    color: var(--text-grey-52);
+    font-size: 1.2rem;
+}
+.menu.active > span > a:hover {
+    text-decoration: underline;
+    color: var(--text-grey-20);
 }
