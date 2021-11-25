@@ -598,3 +598,60 @@ footer {
     width: 2rem;
 }
 
+
+/* Hamburger menu CSS */
+.menu {
+    z-index: 1;
+    position: fixed;
+    top: -40px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    background-color: transparent;
+}
+
+.menu-symbol {
+    width: 40px;
+    height: 4px;
+    background-color: var(--text-grey-52);
+    border-radius: 4px;
+    transition: all .5s ease-in-out;
+}
+.menu-symbol::before,
+.menu-symbol::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  background-color: var(--text-grey-52);
+  border-radius: 4px;
+  transition: all .5s ease-in-out;
+}
+.menu-symbol::before {
+    transform: translateY(-10px);
+}
+.menu-symbol::after {
+    transform: translateY(10px);
+}
+
+/*Animering*/
+.menu.active .menu-symbol {
+    transform: translateX(-50px);
+    background-color: transparent;
+}
+.menu.active .menu-symbol::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+.menu.active .menu-symbol::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+/*Pop out aniamtion*/
+.menu > span > a {
+
+}

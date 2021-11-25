@@ -7,12 +7,10 @@ function clipboardWriteEmail (event) {
 
   
 
-
-
-
-
-
-
+function openMenu(){
+    let menu = document.querySelector(".menu");
+    menu.classList.toggle("active")
+}
 
 
 
