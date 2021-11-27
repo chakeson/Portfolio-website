@@ -9,7 +9,10 @@ function clipboardWriteEmail (event) {
 
 function openMenu(){
     let menu = document.querySelector(".menu");
+    let menuPopout = document.querySelector(".menu-popout");
+
     menu.classList.toggle("active")
+    menuPopout.classList.toggle("active")
 }
 
 
