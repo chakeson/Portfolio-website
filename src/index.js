@@ -16,10 +16,77 @@ function openMenu(){
 }
 
 
+//Gets called to do hover for the menu hamburger button.
+function menuOver(){
+    document.documentElement.style.setProperty("--menu-color","#000")
+}
+function menuOut() {
+    document.documentElement.style.setProperty("--menu-color","#747474")
+}
+
+
+// LANGAUGE CHANGER
+
+const langaugeData = {
+    "english":{
+        "scroll":"Scroll"
+    },
+    "swedish":{
+        "scroll":"Skroll"
+    }
+}
+
+//Get the local storage stored Langauge
+const storageAccess = () => {
+    let startingLanguage = "english";
+    if (localStorage.getItem("lang")){
+        startingLanguage = localStorage.getItem("lang")
+    }
+    return startingLanguage;
+}
+
+
+function changeLang() {
+    console.log("sdgdsgdg");
+    var storedLang = storageAccess();
+    switch (storedLang) {
+        case "english":
+            console.log("2");
+            var switchToLang = "swedish"
+
+            document.getElementById("lang-en").classList.remove("selected");
+            document.getElementById("lang-se").classList.add("selected");
+            localStorage.setItem('lang', 'swedish');
+            
+            document.querySelector("#start > a").textContent = langaugeData[switchToLang].scroll;
+
+
+            
+            break;
+        case "swedish":
+            console.log("3");
+            var switchToLang = "english"
+
+            document.getElementById("lang-se").classList.remove("selected");
+            document.getElementById("lang-en").classList.add("selected");
+            localStorage.setItem('lang', 'english');
+            
+            document.querySelector("#start > a").textContent = langaugeData[switchToLang].scroll;
+
+            break;
+        default:
+            console.log("4");
+            break;
+    }
+
+}
 
 
 
-
+var currentLanguage = storageAccess();
+if (currentLanguage !== "english") {
+    changeLang()
+}
 
 
 

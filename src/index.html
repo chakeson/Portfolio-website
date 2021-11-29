@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.6/vivus.min.js" referrerpolicy="no-referrer"></script>
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
+    <script src="vivusscript.js" async></script>
 </head>
 <body>
     <main> <!-- scroll-setter TODO -->
@@ -37,12 +38,15 @@
                    transform="translate(378.3589,302.04905)" />
               </g>
             </svg>
-            <script src="vivusscript.js"></script>
             
             <h1 class="title1 fade-two">Carl-Henrik</h1>
             <h3 class="title2 fade-two">Full stack developer</h3>
             <!-- TODO -->
-            <button class="btn language">EN/SE</button>
+            <button class="btn language flex" id="lang" onclick="changeLang()">
+                <div id="lang-en" class="selected">EN</div>
+                /
+                <div id="lang-se" class="">SE</div>
+            </button>
             <a href="#content-start" class="btn scroll-btn">Scroll</a>
         </section>
         <div id="content-start"></div>
@@ -218,7 +222,7 @@
         <footer>
 
         </footer>
-        <nav class="menu" onclick="openMenu()">
+        <nav class="menu" onclick="openMenu()" onmouseover="menuOver()" onmouseout="menuOut()">
             <div class="menu-symbol"></div>
         </nav>
         <nav class="menu-popout">

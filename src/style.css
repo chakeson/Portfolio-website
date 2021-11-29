@@ -24,6 +24,7 @@ html,body {
     --text-grey-70: #BABBBD;
     --text-white: #ffffff;
     --text-black: #000000;
+    --menu-color: #747474;
 }
   
 
@@ -130,6 +131,9 @@ h3 {
 }
 .btn:hover {
     color: var(--text-grey-20);
+}
+.selected {
+    color: var(--text-black);
 }
 
 .entry-screen {
@@ -618,17 +622,18 @@ footer {
 .menu-symbol {
     width: 40px;
     height: 4px;
-    background-color: var(--text-grey-52);
+    background-color: var(--menu-color);
     border-radius: 4px;
     transition: all .5s ease-in-out;
 }
+
 .menu-symbol::before,
 .menu-symbol::after {
   content: '';
   position: absolute;
   width: 40px;
   height: 4px;
-  background-color: var(--text-grey-52);
+  background-color: var(--menu-color);
   border-radius: 4px;
   transition: all .5s ease-in-out;
 }
@@ -658,13 +663,12 @@ footer {
  * Make this absolute positioned
  * at the top left of the screen
  */
- .menu-popout
- {
-   position: fixed;
+.menu-popout {
+    position: fixed;
     top: 0px;
     left: 0px;
-    width: 175px;
-    height: 250px;
+    width: 205px;
+    height: 275px;
     padding-top: 55px;
     padding-left: 25px;
     background-color: var(--text-grey-20);
@@ -674,16 +678,16 @@ footer {
     transform-origin: 0% 0%;
     transform: translate(-500%, 0);
     transition: transform 0.5s ease-in-out;
- }
+}
 
- .menu-popout.active {
+.menu-popout.active {
     transform: none;
- }
+}
  
- .menu-popout li {
+.menu-popout li {
     padding: 10px 0;
     list-style: none;
- }
+}
 
 .menu-popout a {
     text-decoration: none;
