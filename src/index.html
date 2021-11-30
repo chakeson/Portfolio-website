@@ -41,13 +41,12 @@
             
             <h1 class="title1 fade-two">Carl-Henrik</h1>
             <h3 class="title2 fade-two">Full stack developer</h3>
-            <!-- TODO -->
             <button class="btn language flex" id="lang" onclick="changeLang()">
                 <div id="lang-en" class="selected">EN</div>
                 /
                 <div id="lang-se" class="">SE</div>
             </button>
-            <a href="#content-start" class="btn scroll-btn">Scroll</a>
+            <a href="#content-start" class="btn scroll-btn" id="scroll">Scroll</a>
         </section>
         <div id="content-start"></div>
         <section class="content-screen">
@@ -65,14 +64,13 @@
                 </nav>
                 <h1 class="flex flex-center-x title5">Projects</h1>
                 <div class="flex flex-row flex-center-x title4">
-                    <!-- TODO -->
-                    <h2>All</h2>
-                    <h2>Web</h2>
-                    <h2>Python</h2>
+                    <button class="btn-none btn-selected" id="btn-all"><h2>All</h2></button>
+                    <button class="btn-none" id="btn-web"><h2>Web</h2></button>
+                    <button class="btn-none" id="btn-python"><h2>Python</h2></button>
                 </div>
                 <!-- Project section -->
                 <div class="flex flex-row project-grid">
-                    <div class="project-card">
+                    <div class="project-card" id="pro1">
                         <img src="media/bookmark.PNG" alt="project image">
                         <h3>Bookmark and Dashboard</h3>
                         <h4>Read more</h4>
@@ -89,7 +87,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" id="pro2">
                         <img src="media/ytdlgui.PNG" alt="project image">
                         <h3>Youtube downloader with GUI</h3>
                         <h4>Read more</h4>
@@ -101,7 +99,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" id="pro3">
                         <img src="media/vin.PNG" alt="project image">
                         <h3>Wine labelmaker</h3>
                         <h4>Read more</h4>
@@ -227,7 +225,7 @@
         </nav>
         <nav class="menu-popout">
             <ul>
-                <a href="#start"><li>Home</li></a>
+                <a href="#start"><li>Start</li></a>
                 <a href="#content-start"><li>Projects</li></a>
                 <a href="#Competencies"><li>Competencies</li></a>
                 <a href="#contact"><li>Contact</li></a>

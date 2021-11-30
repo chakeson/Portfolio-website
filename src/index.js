@@ -29,11 +29,102 @@ function menuOut() {
 
 const langaugeData = {
     "english":{
-        "scroll":"Scroll"
+        "scroll":"Scroll",
+        "projects":"Projects",
+        "val":"All",
+        "pro1title":"Bookmark and Dashboard",
+        "pro1read":"Read more",
+        "pro1preview":"Live preview",
+        "pro2title":"Youtube downloader with GUI",
+        "pro2read":"Read more",
+        "pro3title":"Wine labelmaker",
+        "pro3read":"Read more",
+        "competens":"Competencies",
+        "competensTitle3":"Engineering & design",
+        "competensTitle3Add":"Addative manefacturing",
+        "competensTitle3Sub":"Subtractive manefacturing",
+        "competensTitle3Mat":"Material choices",
+        "contact":"Contact me",
+        "contactname":"Name:",
+        "contactmsg":"Message:", 
+        "contactsubmit":"Submit",
+        "menustart":"Start",
+        "menuprojekt":"Project",
+        "menucompetencies":"Competencies",
+        "menucontact":"Contact",
     },
     "swedish":{
-        "scroll":"Skroll"
+        "scroll":"Skroll",
+        "projects":"Projekt",
+        "val":"Alla",
+        "pro1title":"Bokmärke och Dashboard",
+        "pro1read":"Mer info",
+        "pro1preview":"Live länk",
+        "pro2title":"Youtube nedladdare med GUI",
+        "pro2read":"Mer info",
+        "pro3title":"Vin Etikett skapare",
+        "pro3read":"Mer info",
+        "competens":"Kompetenser",
+        "competensTitle3":"Teknik & design",
+        "competensTitle3Add":"Additiv tillverkning",
+        "competensTitle3Sub":"Subtraktiv tillverkning",
+        "competensTitle3Mat":"Materialval",
+        "contact":"Kontakt",
+        "contactname":"Namn:",
+        "contactmsg":"Meddelande", 
+        "contactsubmit":"Skicka",
+        "menustart":"Start",
+        "menuprojekt":"Projekt",
+        "menucompetencies":"Kompetenser",
+        "menucontact":"Kontakt",
     }
+}
+
+
+
+function textChanger(switchToLang){
+
+    document.getElementById("lang-en").classList.remove("selected");
+    document.getElementById("lang-se").classList.add("selected");
+    localStorage.setItem('lang', switchToLang);
+               
+    //document.getElementById("start").childNodes[13].textContent = langaugeData[switchToLang].scroll;
+    document.getElementById("scroll").textContent = langaugeData[switchToLang].scroll;
+    console.log(document.getElementById("scroll"))
+    document.querySelector("body > main > section.content-screen > div > h1.flex.flex-center-x.title5").textContent = langaugeData[switchToLang].projects;
+    document.querySelector("#btn-all > h2").textContent = langaugeData[switchToLang].val;
+    
+    //Projects selector
+    document.getElementById("pro1").childNodes[3].textContent = langaugeData[switchToLang].pro1title;
+    document.getElementById("pro1").childNodes[5].textContent = langaugeData[switchToLang].pro1read;
+    document.querySelector("#pro1 > div > a:nth-child(1) > div").textContent = langaugeData[switchToLang].pro1preview;
+    
+    document.getElementById("pro2").childNodes[3].textContent = langaugeData[switchToLang].pro2title;
+    document.getElementById("pro2").childNodes[5].textContent = langaugeData[switchToLang].pro2read;
+    
+    
+    document.getElementById("pro3").childNodes[3].textContent = langaugeData[switchToLang].pro3title;
+    document.getElementById("pro3").childNodes[5].textContent = langaugeData[switchToLang].pro3read;
+    
+    //Competencies selector
+    document.getElementById("Competencies").textContent = langaugeData[switchToLang].competens;
+    document.querySelector("body > main > section.content-screen > div > div.competency > div:nth-child(5) > h2").textContent =  langaugeData[switchToLang].competensTitle3;
+    document.querySelector("body > main > section.content-screen > div > div.competency > div:nth-child(5) > ul > li:nth-child(3)").textContent =  langaugeData[switchToLang].competensTitle3Add;
+    document.querySelector("body > main > section.content-screen > div > div.competency > div:nth-child(5) > ul > li:nth-child(4)").textContent =  langaugeData[switchToLang].competensTitle3Sub;
+    document.querySelector("body > main > section.content-screen > div > div.competency > div:nth-child(5) > ul > li:nth-child(5)").textContent =  langaugeData[switchToLang].competensTitle3Mat;
+    
+    //Contact section selector
+    document.getElementById("contact").textContent = langaugeData[switchToLang].contact;
+    document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(1) > label").childNodes[0].textContent = langaugeData[switchToLang].contactname;
+    document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(3) > label").childNodes[0].textContent = langaugeData[switchToLang].contactmsg;
+    document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(4) > button").textContent = langaugeData[switchToLang].contactsubmit;
+    
+    //Popout Menu selector
+    document.querySelector("body > main > nav.menu-popout > ul > a:nth-child(1) > li").textContent = langaugeData[switchToLang].menustart;
+    document.querySelector("body > main > nav.menu-popout > ul > a:nth-child(2) > li").textContent = langaugeData[switchToLang].menuprojekt;
+    document.querySelector("body > main > nav.menu-popout > ul > a:nth-child(3) > li").textContent = langaugeData[switchToLang].menucompetencies;
+    document.querySelector("body > main > nav.menu-popout > ul > a:nth-child(4) > li").textContent = langaugeData[switchToLang].menucontact;
+   
 }
 
 //Get the local storage stored Langauge
@@ -51,31 +142,19 @@ function changeLang() {
     var storedLang = storageAccess();
     switch (storedLang) {
         case "english":
-            console.log("2");
-            var switchToLang = "swedish"
 
-            document.getElementById("lang-en").classList.remove("selected");
-            document.getElementById("lang-se").classList.add("selected");
-            localStorage.setItem('lang', 'swedish');
-            
-            document.querySelector("#start > a").textContent = langaugeData[switchToLang].scroll;
-
+            var switchToLang = "swedish";
+            textChanger(switchToLang);
 
             
             break;
         case "swedish":
-            console.log("3");
-            var switchToLang = "english"
 
-            document.getElementById("lang-se").classList.remove("selected");
-            document.getElementById("lang-en").classList.add("selected");
-            localStorage.setItem('lang', 'english');
-            
-            document.querySelector("#start > a").textContent = langaugeData[switchToLang].scroll;
+            var switchToLang = "english";
+            textChanger(switchToLang);
 
             break;
         default:
-            console.log("4");
             break;
     }
 
@@ -87,6 +166,56 @@ var currentLanguage = storageAccess();
 if (currentLanguage !== "english") {
     changeLang()
 }
+
+
+
+
+
+
+
+
+
+
+
+
+//TAB SLIDER
+function tabSelector(event) {
+    document.getElementById("btn-all").classList.remove("btn-selected");
+    document.getElementById("btn-web").classList.remove("btn-selected");
+    document.getElementById("btn-python").classList.remove("btn-selected");
+    event.currentTarget.classList.add("btn-selected")
+    //console.log(event.currentTarget.classList.add("btn-selected"))
+    console.log(event.currentTarget.id);
+
+    switch (event.currentTarget.id) {
+        case "btn-all":
+            document.getElementById("pro1").classList.remove("hidden")
+            document.getElementById("pro2").classList.remove("hidden")
+            document.getElementById("pro3").classList.remove("hidden")
+            break;
+    
+        case "btn-web":
+            document.getElementById("pro1").classList.remove("hidden")
+            document.getElementById("pro2").classList.add("hidden")
+            document.getElementById("pro3").classList.add("hidden")
+            break;
+
+        case "btn-python":
+            document.getElementById("pro1").classList.add("hidden")
+            document.getElementById("pro2").classList.remove("hidden")
+            document.getElementById("pro3").classList.remove("hidden")
+            break;
+
+        default:
+            break;
+    }
+}
+
+document.getElementById("btn-all").addEventListener("click",tabSelector);
+document.getElementById("btn-web").addEventListener("click",tabSelector);
+document.getElementById("btn-python").addEventListener("click",tabSelector);
+
+
 
 
 
