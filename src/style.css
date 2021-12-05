@@ -269,15 +269,18 @@ h3 {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, 420px);
+    grid-template-rows: repeat(auto-fit,300px);
+    /*grid-auto-flow: column; */
     gap: 5rem;
     justify-items: center;
+    justify-content: center;
     /*margin: 4rem 5vw;*/
     margin: 4rem 5vw 0 4rem;
     /*padding: 0 0 5rem 0;*/
     list-style-type: none;
 }
-  
+
 
 .project-card {
     position: relative;
@@ -723,4 +726,32 @@ footer {
 .menu-popout a:hover {
     text-decoration: underline;
     color: var(--bg-color-two);
+}
+
+/* Scope */
+
+#scope-container {
+    position: relative;
+}
+
+#scope {
+    position: absolute;
+    z-index: 2;
+    border: 3px solid #000;
+    border-radius: 50%;
+    /*width: 15vh;
+    height: 15vh;*/
+    width: 150px;
+    height: 150px;
+    background-image: url("media/drawing.svg");/* url("media/edited-art.png") */
+    background-repeat: no-repeat;
+}
+
+.scope-background {
+    position: absolute;
+    z-index: 1;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    background-color: white;
 }

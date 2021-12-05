@@ -6,7 +6,7 @@ function clipboardWriteEmail (event) {
 
 
   
-
+//Slide out menu trigger by class toggle
 function openMenu(){
     let menu = document.querySelector(".menu");
     let menuPopout = document.querySelector(".menu-popout");
@@ -84,13 +84,12 @@ const langaugeData = {
 
 function textChanger(switchToLang){
 
-    document.getElementById("lang-en").classList.remove("selected");
-    document.getElementById("lang-se").classList.add("selected");
+
     localStorage.setItem('lang', switchToLang);
                
     //document.getElementById("start").childNodes[13].textContent = langaugeData[switchToLang].scroll;
     document.getElementById("scroll").textContent = langaugeData[switchToLang].scroll;
-    console.log(document.getElementById("scroll"))
+    /*console.log(document.getElementById("scroll"))*/
     document.querySelector("body > main > section.content-screen > div > h1.flex.flex-center-x.title5").textContent = langaugeData[switchToLang].projects;
     document.querySelector("#btn-all > h2").textContent = langaugeData[switchToLang].val;
     
@@ -138,20 +137,23 @@ const storageAccess = () => {
 
 
 function changeLang() {
-    console.log("sdgdsgdg");
+    /*console.log("sdgdsgdg");*/
     var storedLang = storageAccess();
     switch (storedLang) {
         case "english":
-
+            
             var switchToLang = "swedish";
             textChanger(switchToLang);
+            document.getElementById("lang-en").classList.remove("selected");
+            document.getElementById("lang-se").classList.add("selected");
 
-            
             break;
         case "swedish":
 
             var switchToLang = "english";
             textChanger(switchToLang);
+            document.getElementById("lang-se").classList.remove("selected");
+            document.getElementById("lang-en").classList.add("selected");
 
             break;
         default:
@@ -214,6 +216,117 @@ function tabSelector(event) {
 document.getElementById("btn-all").addEventListener("click",tabSelector);
 document.getElementById("btn-web").addEventListener("click",tabSelector);
 document.getElementById("btn-python").addEventListener("click",tabSelector);
+
+
+
+// Magnifaction glass
+const zoom = 3;
+
+
+function artOver() {
+    document.getElementById("scope-background").classList.remove("hidden");
+}
+
+function artOut() {
+    document.getElementById("scope-background").classList.add("hidden");
+}
+
+
+
+function scope(){
+    function moveMagnifier(e) {
+
+        
+        e.preventDefault();
+
+        var pos = cursorPosition(e);
+        var x = pos.x; var y = pos.y;
+
+        if (x > bild.getBoundingClientRect().width - (widthScope / zoom)) {
+            x = bild.getBoundingClientRect().width - (widthScope / zoom);
+        }
+
+        if (x < widthScope / zoom) {
+            x = widthScope / zoom;
+        }
+
+        if (y > bild.getBoundingClientRect().height - (heightScope / zoom)) {
+            y = bild.getBoundingClientRect().height - (heightScope / zoom);
+        }
+
+        if (y < heightScope / zoom) {
+            y = heightScope / zoom;
+        }
+        scopeBackgroundDiv = document.getElementById("scope-background");
+        scopeBackgroundDiv.style.left = (x - widthScope) + "px";
+        scopeBackgroundDiv.style.top = (y /*- heightScope*/) + "px";
+
+        scopeDiv.style.backgroundPosition = "-" + ((x * zoom) - widthScope + zoom) + "px -" + ((y * zoom) - heightScope + zoom) + "px";
+    }
+    function cursorPosition(e) {
+        var x = 0; var y = 0;
+        e = e || window.event;
+        var bildDiv = bild.getBoundingClientRect();
+        x = e.pageX - bildDiv.left;
+        y = e.pageY - bildDiv.top;
+        x = x - window.pageXOffset;
+        y = y - window.pageYOffset;
+        return {x : x, y : y};
+    }
+    
+    //Turn of the cursor done here
+    scopeContainerDiv = document.getElementById("scope-container");
+    scopeContainerDiv.style.cursor = "none";
+    
+
+
+    scopeDiv = document.getElementById("scope");
+    bild = document.getElementById("intro");
+    
+
+    var backgroundSizeVarScope;
+    function resizerChanger(backgroundSizeVarScope){
+        bild = document.getElementById("intro");
+        backgroundSizeVarScope = `${bild.getBoundingClientRect().width * zoom}px ${bild.getBoundingClientRect().height * zoom}px`;
+        scopeDiv.style.backgroundSize = backgroundSizeVarScope; 
+        return backgroundSizeVarScope
+    }
+    backgroundSizeVarScope = resizerChanger(backgroundSizeVarScope);
+    window.addEventListener('resize', resizerChanger);
+
+
+    scopeDiv.style.backgroundSize = backgroundSizeVarScope; 
+    
+    console.log(scopeDiv.getBoundingClientRect());
+
+    widthScope = 75;//check scope size in css sheet
+    heightScope = 75;//
+    
+    //console.log(heightScope);
+    
+    scopeDiv.addEventListener("mousemove", moveMagnifier);
+    bild.addEventListener("mousemove", moveMagnifier);
+    scopeDiv.addEventListener("touchmove", moveMagnifier);
+    bild.addEventListener("touchmove", moveMagnifier);    
+}
+scope();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
