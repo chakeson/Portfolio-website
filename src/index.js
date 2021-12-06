@@ -259,7 +259,7 @@ function scope(){
         }
         scopeBackgroundDiv = document.getElementById("scope-background");
         scopeBackgroundDiv.style.left = (x - widthScope) + "px";
-        scopeBackgroundDiv.style.top = (y /*- heightScope*/) + "px";
+        scopeBackgroundDiv.style.top = (y - heightScope/2) + "px";
 
         scopeDiv.style.backgroundPosition = "-" + ((x * zoom) - widthScope + zoom) + "px -" + ((y * zoom) - heightScope + zoom) + "px";
     }

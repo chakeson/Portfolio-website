@@ -753,5 +753,5 @@ footer {
     border-radius: 50%;
     width: 150px;
     height: 150px;
-    background-color: white;
+    background-color: var(--bg-color-one);
 }
