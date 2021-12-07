@@ -32,11 +32,7 @@ body {
     background-color: var(--bg-color-two);
 }
 
-p {
-    color: var(--bg-color-one);
-    padding: 1vh 10vw;
-    margin: auto;
-}
+
 
 
 .flex {
@@ -65,6 +61,12 @@ p {
     right: 30px;
 }
 
+.main-text {
+    color: var(--bg-color-one);
+    padding: 1vh 10vw;
+    margin: auto;
+    font-size: 1.5rem;
+}
 
 .btn {
     border: none;
@@ -79,7 +81,7 @@ p {
 }
 
 .title1{
-    font-size: 3rem;
+    font-size: 4rem;
     color: var(--text-grey-70);
     padding-top: 5vh;
 }
@@ -91,11 +93,15 @@ p {
     padding-top: 5vh;
 }
 
+.pro3-img {
+    width: 80vw;
+}
+
 .linker {
     text-decoration: none;
     color: var(--bg-color-one);
     padding: 5px 15px;
-    border: 3px solid white;
+    border: 2px solid white;
     border-radius: 35px;
     margin: 1rem 1rem;
 }

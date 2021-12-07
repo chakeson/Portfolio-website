@@ -1,11 +1,3 @@
-//Copy to clipboard function
-function clipboardWriteEmail (event) {
-    event.preventDefault();
-    navigator.clipboard.writeText("carlhenrik.akeson@gmail.com");
-}
-
-
-  
 //Slide out menu trigger by class toggle
 function openMenu(){
     let menu = document.querySelector(".menu");
@@ -95,15 +87,15 @@ function textChanger(switchToLang){
     
     //Projects selector
     document.getElementById("pro1").childNodes[3].textContent = langaugeData[switchToLang].pro1title;
-    document.getElementById("pro1").childNodes[5].textContent = langaugeData[switchToLang].pro1read;
+    document.getElementById("pro1").childNodes[5].childNodes[0].textContent = langaugeData[switchToLang].pro1read;
     document.querySelector("#pro1 > div > a:nth-child(1) > div").textContent = langaugeData[switchToLang].pro1preview;
     
     document.getElementById("pro2").childNodes[3].textContent = langaugeData[switchToLang].pro2title;
-    document.getElementById("pro2").childNodes[5].textContent = langaugeData[switchToLang].pro2read;
+    document.getElementById("pro2").childNodes[5].childNodes[0].textContent = langaugeData[switchToLang].pro2read;
     
     
     document.getElementById("pro3").childNodes[3].textContent = langaugeData[switchToLang].pro3title;
-    document.getElementById("pro3").childNodes[5].textContent = langaugeData[switchToLang].pro3read;
+    document.getElementById("pro3").childNodes[5].childNodes[0].textContent = langaugeData[switchToLang].pro3read;
     
     //Competencies selector
     document.getElementById("Competencies").textContent = langaugeData[switchToLang].competens;
@@ -166,7 +158,10 @@ function changeLang() {
 
 var currentLanguage = storageAccess();
 if (currentLanguage !== "english") {
-    changeLang()
+    textChanger("swedish");
+    document.getElementById("lang-en").classList.remove("selected");
+    document.getElementById("lang-se").classList.add("selected");
+
 }
 
 
@@ -187,7 +182,7 @@ function tabSelector(event) {
     document.getElementById("btn-python").classList.remove("btn-selected");
     event.currentTarget.classList.add("btn-selected")
     //console.log(event.currentTarget.classList.add("btn-selected"))
-    console.log(event.currentTarget.id);
+    /*console.log(event.currentTarget.id);*/
 
     switch (event.currentTarget.id) {
         case "btn-all":
@@ -297,7 +292,7 @@ function scope(){
 
     scopeDiv.style.backgroundSize = backgroundSizeVarScope; 
     
-    console.log(scopeDiv.getBoundingClientRect());
+    /*console.log(scopeDiv.getBoundingClientRect());*/
 
     widthScope = 75;//check scope size in css sheet
     heightScope = 75;//
@@ -323,7 +318,14 @@ scope();
 
 
 
+//Copy to clipboard function
+function clipboardWriteEmail (event) {
+    event.preventDefault();
+    navigator.clipboard.writeText("carlhenrik.akeson@gmail.com");
+}
 
+
+  
 
 
 

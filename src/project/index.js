@@ -59,6 +59,10 @@ function changeLang() {
 
 var currentLanguage = storageAccess();
 if (currentLanguage !== "english") {
-    changeLang()
+    textChanger("swedish");
+    document.getElementById("lang-en").classList.remove("selected");
+    document.getElementById("lang-se").classList.add("selected");
+
 }
+
 
