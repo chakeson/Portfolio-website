@@ -49,7 +49,7 @@ const langaugeData = {
         "scroll":"Skroll",
         "projects":"Projekt",
         "val":"Alla",
-        "pro1title":"Bokmärke och Dashboard",
+        "pro1title":"Bokmärkes sida med dashboard",
         "pro1read":"Mer info",
         "pro1preview":"Live länk",
         "pro2title":"Youtube nedladdare med GUI",
