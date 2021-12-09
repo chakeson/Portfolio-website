@@ -1,4 +1,7 @@
 //Slide out menu trigger by class toggle
+const menuElement = document.querySelector("body > main > nav.menu");
+menuElement.addEventListener("click",openMenu)
+
 function openMenu(){
     let menu = document.querySelector(".menu");
     let menuPopout = document.querySelector(".menu-popout");
@@ -128,6 +131,7 @@ const storageAccess = () => {
 }
 
 
+document.querySelector("#lang").addEventListener("click",changeLang);
 function changeLang() {
     /*console.log("sdgdsgdg");*/
     var storedLang = storageAccess();
@@ -319,6 +323,7 @@ scope();
 
 
 //Copy to clipboard function
+document.querySelector("body > main > section.content-screen > div > div.contact-card > div.flex.flex-column > a:nth-child(1) > div > img").addEventListener("click",clipboardWriteEmail)
 function clipboardWriteEmail (event) {
     event.preventDefault();
     navigator.clipboard.writeText("carlhenrik.akeson@gmail.com");
