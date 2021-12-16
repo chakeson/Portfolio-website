@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+:root {
+    --bg-color-one: #F2F2F2;
+    --bg-color-two: #1C1D25;
+    --text-grey-20: #494A51;
+    --text-grey-52: #747474;
+    --text-grey-60: #A4A5A8;
+    --text-grey-70: #BABBBD;
+    --text-white: #ffffff;
+    --text-black: #000000;
+    --menu-color: #747474;
+}
+  
+body {
+    background-color: var(--bg-color-two);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    color: var(--text-white);
+    font-size: 5rem;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.links > a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--text-white);
+    min-width: 140px;
+    padding-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media only screen and (max-width: 600px) {
+    html, body, #app{
+      font-size: 13px;
+    }
+}
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    html, body, #app{
+      font-size: 14px;
+    }
+}
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    html, body, #app{
+      font-size: 16px;
+    }
+}
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    html, body, #app{
+      font-size: 20px;
+    }
+}
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    html, body, #app{
+      font-size: 26px;
+    }
+}

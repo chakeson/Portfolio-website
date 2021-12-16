@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH Åkeson</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="../success/style-success.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Thank you</h1>
+    <div class="links">
+        <a href="/">
+            <img src="../media/home.svg" width="40px" alt="CV Icon">
+            <h2>Home</h2>
+        </a>
+        <a href="" target="_blank" rel="noopener noreferrer">
+            <img src="../media/cviconVIT.svg" width="30px" alt="CV Icon">
+            <h2>CV</h2>
+        </a>
+        <a href="https://www.linkedin.com/in/carl-henrik-%C3%A5keson-064a4b209/" target="_blank" rel="noopener noreferrer">
+            <img src="../media/linkedin.svg" width="40px" alt="Linkedin Icon">
+            <h2>Linkedin</h2>
+        </a>
+        <a href="https://github.com/chakeson" target="_blank" rel="noopener noreferrer">
+            <img src="../media/github.svg" width="40px" alt="Github Icon">
+            <h2>Github</h2>
+        </a>
+    </div>
+</body>
+
+<script>
+    const storageAccess = () => {
+        let startingLanguage = "english";
+        if (localStorage.getItem("lang")){
+            startingLanguage = localStorage.getItem("lang")
+        }
+        return startingLanguage;
+    }
+
+    var currentLanguage = storageAccess();
+    if (currentLanguage !== "english") {
+        document.querySelector("body > h1").textContent = "Tack";
+        document.querySelector("body > div > a:nth-child(1) > h2").textContent = "Start";
+    }
+    
+</script>
