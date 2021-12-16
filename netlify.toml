@@ -12,6 +12,6 @@
   compress = false
 
 [[redirects]]
-  from = "/"
+  from = "/*"
   to = "error/error.html"
   status = 404
