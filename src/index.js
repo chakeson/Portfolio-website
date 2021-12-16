@@ -111,12 +111,15 @@ function textChanger(switchToLang){
     document.getElementById("contact").textContent = langaugeData[switchToLang].contact;
     try {
         document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(1) > label").childNodes[0].textContent = langaugeData[switchToLang].contactname;
+        document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(3) > label").childNodes[0].textContent = langaugeData[switchToLang].contactmsg;
+    document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(4) > button").textContent = langaugeData[switchToLang].contactsubmit;
     } catch (error) {
         document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(2) > label").childNodes[0].textContent = langaugeData[switchToLang].contactname;
+        document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(4) > label").childNodes[0].textContent = langaugeData[switchToLang].contactmsg;
+        document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(5) > button").textContent = langaugeData[switchToLang].contactsubmit;
     }
     
-    document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(3) > label").childNodes[0].textContent = langaugeData[switchToLang].contactmsg;
-    document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(4) > button").textContent = langaugeData[switchToLang].contactsubmit;
+    
     
     //Popout Menu selector
     document.querySelector("body > main > nav.menu-popout > ul > a:nth-child(1) > li").textContent = langaugeData[switchToLang].menustart;
