@@ -109,7 +109,12 @@ function textChanger(switchToLang){
     
     //Contact section selector
     document.getElementById("contact").textContent = langaugeData[switchToLang].contact;
-    document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(1) > label").childNodes[0].textContent = langaugeData[switchToLang].contactname;
+    try {
+        document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(1) > label").childNodes[0].textContent = langaugeData[switchToLang].contactname;
+    } catch (error) {
+        document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(2) > label").childNodes[0].textContent = langaugeData[switchToLang].contactname;
+    }
+    
     document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(3) > label").childNodes[0].textContent = langaugeData[switchToLang].contactmsg;
     document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(4) > button").textContent = langaugeData[switchToLang].contactsubmit;
     
