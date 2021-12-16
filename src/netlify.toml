@@ -15,3 +15,40 @@
   from = "/*"
   to = "error/404.html"
   status = 404
+
+# Project page redirects.
+[[redirects]]
+  from = "/project1"
+  to = "/project/pro1"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/projekt1"
+  to = "/project/pro1"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/project1"
+  to = "/project/pro1"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/projekt2"
+  to = "/project/pro2"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/project3"
+  to = "/project/pro3"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/projekt3"
+  to = "/project/pro3"
+  status = 200
+  force = true
