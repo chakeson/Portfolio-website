@@ -195,6 +195,9 @@ h3 {
         font-size: 4rem;
         padding-top: 4vh;
     }
+    .title4{
+        font-size: 1.5rem;
+    }
     .title5{
         font-size: 4rem;
     }
@@ -207,6 +210,9 @@ h3 {
     .title3{
         font-size: 3rem;
         padding-top: 4vh;
+    }
+    .title4{
+        font-size: 1.1rem;
     }
     .title5{
         font-size: 3rem;
@@ -275,8 +281,8 @@ h3 {
     gap: 5rem;
     justify-items: center;
     justify-content: center;
-    /*margin: 4rem 5vw;*/
-    margin: 4rem 5vw 0 4rem;
+    margin: 4rem 5vw;
+    /*margin: 4rem 5vw 0 4rem;*/
     /*padding: 0 0 5rem 0;*/
     list-style-type: none;
 }
@@ -298,8 +304,7 @@ h3 {
     border-radius: 35px;
     width: 376px;
     height: 200px;
-    transition: /*height 0.1s cubic-bezier(0, 0.88, 0.45, 0.94),*/
-                opacity 0.1s cubic-bezier(0, 0.88, 0.45, 0.94);
+  
 }
 .project-card > h3 {
     color: var(--text-white);
@@ -309,7 +314,7 @@ h3 {
     transition: height 0.1s ease-in-out;
 }
 
-.project-card >a > h4 {
+.project-card > a > h4 {
     display: none;
     opacity: 0;
 }
@@ -469,8 +474,6 @@ h3 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-
-
     background: #1C1D25;
     width: 80vw;
     /*height: 20rem;*/
@@ -754,4 +757,97 @@ footer {
     width: 150px;
     height: 150px;
     background-color: var(--bg-color-one);
+}
+
+
+/* Phone css */
+
+@media screen and (max-width: 480px) {
+    .project-grid {
+        gap: 2rem;
+        grid-template-rows: repeat(auto-fit,210px);
+        margin: 2rem 5vw;
+    }
+    
+    .project-card {
+        width: 294px;
+        height: 210px;
+    }
+    .project-card > img {
+        width: 263.2px;
+        height: 140px;
+        opacity: 50%;
+    }
+    .project-card:hover > img {
+        width: 263.2px;
+        height: 140px;
+        opacity: 50%;
+    }
+    .project-card > h3 {
+        font-size: 16px;
+        padding-top: 8px;
+    }
+    .project-card:hover >a > h4 {
+        font-size: 20px;
+        left: 100px;
+    }
+    .project-card:hover  > div > a {
+        display: block;
+        opacity: 1;
+        padding: 5px 11px 0 11px;
+    }
+    .project-card:hover  > div > a > div {
+        width: 100px;
+        height: 35px;
+        font-size: 15px;
+    }
+
+
+    .divider-contact {
+        width: 400px;
+    }
+    .contact-btn {
+        width: 350px;
+        font-size: 1.1rem;
+    }
+    .contact-form > form > p > label > input {
+        width: 370px;
+        height: 70px;
+    }
+    .contact-form > form > p > label > textarea {
+        width: 370px;
+    }
+    .contact-form > form > p > button {
+        width: 370px;
+        height: 70px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .btn-none > h2 {
+        padding: 0.1rem 1.8rem;
+    }
+
+    .contact-btn {
+        width: 340px;
+        font-size: 1.08rem;
+    }
+    .divider-contact {
+        width: 350px;
+    }
+    .contact-form > form > p > label > input {
+        width: 340px;
+    }
+    .contact-form > form > p > label > textarea {
+        width: 340px;
+    }
+    .contact-form > form > p > button {
+        width: 340px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .btn-none > h2 {
+        padding: 0.1rem 1rem;
+    }
 }
