@@ -829,20 +829,20 @@ footer {
     }
 
     .contact-btn {
-        width: 340px;
+        width: 337.5px;
         font-size: 1.08rem;
     }
     .divider-contact {
         width: 350px;
     }
     .contact-form > form > p > label > input {
-        width: 340px;
+        width: 337.5px;
     }
     .contact-form > form > p > label > textarea {
-        width: 340px;
+        width: 337.5px;
     }
     .contact-form > form > p > button {
-        width: 340px;
+        width: 337.5px;
     }
 }
 
