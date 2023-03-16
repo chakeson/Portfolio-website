@@ -36,8 +36,8 @@ const langaugeData = {
         "pro3read":"Read more",
         "competens":"Competencies",
         "competensTitle3":"Engineering & design",
-        "competensTitle3Add":"Addative manefacturing",
-        "competensTitle3Sub":"Subtractive manefacturing",
+        "competensTitle3Add":"Addative manufacturing",
+        "competensTitle3Sub":"Subtractive manufacturing",
         "competensTitle3Mat":"Material choices",
         "contact":"Contact me",
         "contactname":"Name:",
@@ -112,7 +112,7 @@ function textChanger(switchToLang){
     try {
         document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(1) > label").childNodes[0].textContent = langaugeData[switchToLang].contactname;
         document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(3) > label").childNodes[0].textContent = langaugeData[switchToLang].contactmsg;
-    document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(4) > button").textContent = langaugeData[switchToLang].contactsubmit;
+        document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(4) > button").textContent = langaugeData[switchToLang].contactsubmit;
     } catch (error) {
         document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(2) > label").childNodes[0].textContent = langaugeData[switchToLang].contactname;
         document.querySelector("body > main > section.content-screen > div > div.contact-card > div.contact-form > form > p:nth-child(4) > label").childNodes[0].textContent = langaugeData[switchToLang].contactmsg;
